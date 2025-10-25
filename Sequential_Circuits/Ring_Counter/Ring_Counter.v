@@ -1,10 +1,10 @@
 module Ring_Counter(
 	input clk,
 	input rst,
-	output [1:0]q
+	output reg [1:0]q
 );
 
-always(posedge clk) begin
+always@(posedge clk) begin
 	if (rst) q<=2'b01;
 	else begin
 	q[1]<=q[0];
