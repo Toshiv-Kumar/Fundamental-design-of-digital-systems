@@ -1,13 +1,14 @@
-module DFlipFlop_SyncReset(D,clk,sync_reset,Q);
-input D; 
-input clk; 
-input sync_reset; // synchronous reset 
-output reg Q;  
-always @(posedge clk) 
+module dff 
+(
+input clk, din,
+output reg q, qbar
+);
+ 
+always@(posedge clk)
 begin
- if(sync_reset==1'b1)
-  Q <= 1'b0; 
- else 
-  Q <= D; 
-end 
-endmodule 
+q    <= din;
+qbar <= ~din;
+end
+ 
+ 
+endmodule
