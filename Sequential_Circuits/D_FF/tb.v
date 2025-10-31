@@ -6,7 +6,7 @@ reg clk = 0, din = 0;
 wire q,qbar;
 integer i = 0;
  
-dff dut (clk, din , q, qbar);
+DFlipFlop_SyncReset dut (clk, din , q, qbar);
  
 always #5 clk = ~clk;
  
